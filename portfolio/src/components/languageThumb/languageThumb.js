@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {filter} from '../../functions/functions'
 
 const shower = (willBoolen,arr,nameOfClass) =>{
     if(!!willBoolen){
@@ -15,18 +16,29 @@ const shower = (willBoolen,arr,nameOfClass) =>{
 const LanguageThumb = (props) => {
 
     const classList = ['header__language__list']
+  
+     const active = filter(props.lang.languages).active
+     const unActive = filter(props.lang.languages).unActive
+    
+    
 
 
     return (
-        <div className='header__language' onClick={props.listVision}>
 
-            <span>{props.lang.nameLanguage}</span>	&nbsp; <span >{props.lang.activLanguage}</span>
+        <div className='header__language' onClick={props.listVision}>
+            <span>{active.nameLanguage}</span>
+            &nbsp;
+            <span>{active.language}</span>
             <ul className={shower(props.lang.option, classList, 'vision')}>
-                <li onClick={props.changeLang} className='activLang'>{props.lang.activLanguage}</li>
-                <li onClick={props.changeLang} >{props.lang.language}</li>
+                <li key={active.id} className='activLang'>{active.language}</li>
+    {unActive.map(item=><li onClick={props.changeLang} key={item.id} id={item.id}>{item.language}</li> )}
             </ul>
+            {/* {props.lang.languages.filter(item=>item.active === true).map(item=><div key={item.id+'wrapper'}><span>{item.nameLanguage}</span>&nbsp;<span>{item.language}</span></div>)}
+            <ul className={shower(props.lang.option, classList, 'vision')}>
+    {props.lang.languages.sort((item)=>item.active === true? -1:1).map(item=><li className={item.active?'activLang':null} key={item.id} onClick={props.changeLang} id={item.id} >{item.language}</li> )}
+            </ul> */}
         </div>
-    )
+       )
 }
 
 function mapStateToProps(state){
@@ -44,3 +56,12 @@ function mapDispatchToProps(dispatch){
 
 
 export default connect(mapStateToProps,mapDispatchToProps)(LanguageThumb)
+
+
+
+// <div className='header__language'>
+
+
+
+     
+// </div>

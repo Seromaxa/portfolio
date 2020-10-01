@@ -9,6 +9,7 @@ export const RU_CONTACT = "Контакты"
 
 
 
+
 //////////// English ///////////
 export const EN_LANGUAGE = 'English'
 export const EN_MY_NAME = 'Romanenko Sergii'
@@ -31,20 +32,24 @@ export const russian = {
     id:'ru',
     myName: RU_MY_NAME,
     nameLanguage: RU_NAME_LANGUAGE,
-    activLanguage:RU_LANGUAGE,
-    language:EN_LANGUAGE,
+    language:RU_LANGUAGE,
     cv:RU_CV,
     works:RU_WORKS,
     contact:RU_CONTACT,
+
+    active: false
 }
 
 export const english ={
     id:'en',
     myName: EN_MY_NAME,
     nameLanguage: EN_NAME_LANGUAGE,
-    activLanguage:EN_LANGUAGE,
-    language:RU_LANGUAGE,
+    language:EN_LANGUAGE,
     cv: EN_CV,
     works:EN_WORKS,
     contact:EN_CONTACT,
+
+    active: true
 }
+
+
