@@ -3,12 +3,21 @@ import ReactDOM from 'react-dom';
 import 'normalize.css';
 import './styles/mainstyle.sass'
 import App from './App';
-import {createStore} from 'redux'
+import {createStore,applyMiddleware,compose} from 'redux'
 import {Provider} from 'react-redux'
 import rootReduser from './store/redusers/rootReducer'
+import reduxThunck from 'redux-thunk'
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(rootReduser)
+const composeEnhancers =
+  typeof window === 'object' &&
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?   
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+      // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+    }) : compose;
+
+
+const store = createStore(rootReduser,composeEnhancers( applyMiddleware(reduxThunck)))
 
 ReactDOM.render(
   <React.StrictMode>

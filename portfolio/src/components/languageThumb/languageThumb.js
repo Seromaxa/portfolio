@@ -1,8 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {filter} from '../../functions/functions'
+import {show,asyncChanger} from '../../store/actions/actionsLang'
 
-const shower = (willBoolen,arr,nameOfClass) =>{
+const addClass = (willBoolen,arr,nameOfClass) =>{
     if(!!willBoolen){
      arr.push(nameOfClass) 
     }else{
@@ -29,39 +30,27 @@ const LanguageThumb = (props) => {
             <span>{active.nameLanguage}</span>
             &nbsp;
             <span>{active.language}</span>
-            <ul className={shower(props.lang.option, classList, 'vision')}>
+            <ul className={addClass(props.lang.option, classList, 'vision')}>
                 <li key={active.id} className='activLang'>{active.language}</li>
-    {unActive.map(item=><li onClick={props.changeLang} key={item.id} id={item.id}>{item.language}</li> )}
+    {unActive.map(item=><li onClick={event=>props.changeLang(event.target.id)} key={item.id} id={item.id}>{item.language}</li> )}
             </ul>
-            {/* {props.lang.languages.filter(item=>item.active === true).map(item=><div key={item.id+'wrapper'}><span>{item.nameLanguage}</span>&nbsp;<span>{item.language}</span></div>)}
-            <ul className={shower(props.lang.option, classList, 'vision')}>
-    {props.lang.languages.sort((item)=>item.active === true? -1:1).map(item=><li className={item.active?'activLang':null} key={item.id} onClick={props.changeLang} id={item.id} >{item.language}</li> )}
-            </ul> */}
         </div>
        )
 }
 
 function mapStateToProps(state){
     return{
-        lang: state
+        lang: state.langReducer
     }
 }
 
 function mapDispatchToProps(dispatch){
  return{
-     listVision: ()=> dispatch({type: 'SHOW_LIST'}),
-     changeLang: event=> dispatch({type:'CHANGE_LANG',val:event})
+     listVision: ()=> dispatch(show()),
+     changeLang: event=> dispatch(asyncChanger(event))
+
  }
 }
 
 
 export default connect(mapStateToProps,mapDispatchToProps)(LanguageThumb)
-
-
-
-// <div className='header__language'>
-
-
-
-     
-// </div>

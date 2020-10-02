@@ -27,7 +27,7 @@ const Header = props=>{
 
 function mapStateToProps(state){
     return{
-        lang: state
+        lang: state.langReducer
     }
 }
 export default connect(mapStateToProps)(Header)
