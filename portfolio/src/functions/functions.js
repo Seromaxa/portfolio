@@ -7,3 +7,8 @@ export function filter (arr){
      
     return  Lang
 }
+
+export function age (yearMonthDay){
+    let birthDay = new Date(yearMonthDay).getFullYear()
+    return new Date().getFullYear() - birthDay
+}
