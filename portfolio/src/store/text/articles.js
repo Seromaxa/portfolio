@@ -12,7 +12,7 @@
  const RU_CITY_NAME = "Киев"
  const RU_CITY = "Город"
  const RU_ABOUT = "О себе"
- const RU_GENERAL = 'asdfghj'
+ const RU_GENERAL_INFO = 'asdfghj'
 
 
 //////////// English ///////////
@@ -29,13 +29,13 @@
  const EN_CITY_NAME = "Kyiv"
  const EN_CITY = "City"
  const EN_ABOUT = "About me"
- const EN_GENERAL = 'sdfghjk',
+ const EN_GENERAL_INFO = 'sdfghjk',
 
 ////////////// General Cont //////////
 
-export const EMAIL = 'sergromanenko@gmail.com'
-export const PHON = '+38 (097) 298 73 14'
-export const FACEBOOK = 'https://www.facebook.com/profile.php?id=100000893622459'
+ export const EMAIL = 'sergromanenko@gmail.com'
+ export const PHON = '+38 (097) 298 73 14'
+ export const FACEBOOK = 'https://www.facebook.com/profile.php?id=100000893622459'
 
 
 //////// Assemblage   ///////////////
@@ -54,7 +54,7 @@ export const russian = {
     mail : RU_MAIL,
     phone: RU_PHONE,
     aboutMe: RU_ABOUT,
-    generalInfo: RU_GENERAL,
+    generalInfo: RU_GENERAL_INFO,
 
 
 
@@ -75,8 +75,7 @@ export const english ={
     mail : EN_MAIL,
     phone: EN_PHONE,
     aboutMe: EN_ABOUT,
-    generalInfo: EN_GENERAL,
-
+    generalInfo: EN_GENERAL_INFO,
 
 
     active: true
