@@ -29,13 +29,13 @@
  const EN_CITY_NAME = "Kyiv"
  const EN_CITY = "City"
  const EN_ABOUT = "About me"
- const EN_GENERAL_INFO = 'sdfghjk',
+ const EN_GENERAL_INFO = 'sdfghjk'
 
 ////////////// General Cont //////////
 
- export const EMAIL = 'sergromanenko@gmail.com'
- export const PHON = '+38 (097) 298 73 14'
- export const FACEBOOK = 'https://www.facebook.com/profile.php?id=100000893622459'
+export const EMAIL = 'sergromanenko@gmail.com'
+export const PHON = '+38 (097) 298 73 14'
+export const FACEBOOK = 'https://www.facebook.com/profile.php?id=100000893622459'
 
 
 //////// Assemblage   ///////////////
