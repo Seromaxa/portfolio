@@ -12,7 +12,10 @@
  const RU_CITY_NAME = "Киев"
  const RU_CITY = "Город"
  const RU_ABOUT = "О себе"
- const RU_GENERAL_INFO = 'asdfghj'
+ const RU_GENERAL_INFO = 'Добрый день. Меня зовут Сергей. В основном  я работал кладовщиком, с разными группами товаров, и разными логистическими цепочками. Некоторое время работал менеджером по продажам, менеджером-экспедитором зерновых культур. Не так давно заинтересовался програмированием. Окончил курс "Front-end" в "Компьютерной академии ШАГ". В данный момент совершенствую свои навыки в React. '
+ const RU_SKILLS = 'Технологии которые я использую'
+ const RU_LOOK_FO = `Я ищю вакансию`
+ const RU_VAC = 'разработчик'
 
 
 //////////// English ///////////
@@ -29,13 +32,17 @@
  const EN_CITY_NAME = "Kyiv"
  const EN_CITY = "City"
  const EN_ABOUT = "About me"
- const EN_GENERAL_INFO = 'sdfghjk'
+ const EN_GENERAL_INFO = `Hello. My name is Sergey. Basically, I worked as a storekeeper, with different groups of goods, and different supply chains. For some time I'm worked as a sales manager, a manager-freight forwarder of grain crops. Not so long ago I got interested in programming. Graduated from the course of "Front-end" in "STEP Computer Academy". I'm currently improving my skills in React.`
+ const EN_SKILLS =`Technology which I'm using`
+ const EN_LOOK_FO = `I'm looking for vacancy a`
+ const EN_VAC = 'developer'
 
 ////////////// General Cont //////////
 
 export const EMAIL = 'sergromanenko@gmail.com'
 export const PHON = '+38 (097) 298 73 14'
 export const FACEBOOK = 'https://www.facebook.com/profile.php?id=100000893622459'
+export const TEXNOLOGY = ['HTML5','CSS3 (Flexbox, Grid)','SCSS/SASS/LESS','Webpack/Gulp','JavaScript(ES6)','jQuery','React JS','Node.js','Git']
 
 
 //////// Assemblage   ///////////////
@@ -55,7 +62,9 @@ export const russian = {
     phone: RU_PHONE,
     aboutMe: RU_ABOUT,
     generalInfo: RU_GENERAL_INFO,
-
+    skillsTag: RU_SKILLS,
+    lookFo: RU_LOOK_FO,
+    vacancy: RU_VAC,
 
 
     active: false
@@ -76,6 +85,10 @@ export const english ={
     phone: EN_PHONE,
     aboutMe: EN_ABOUT,
     generalInfo: EN_GENERAL_INFO,
+    skillsTag: EN_SKILLS,
+    lookFo: EN_LOOK_FO,
+    vacancy: EN_VAC,
+
 
 
     active: true

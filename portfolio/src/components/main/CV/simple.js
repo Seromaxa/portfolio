@@ -4,11 +4,11 @@ import {connect} from 'react-redux'
 import {EMAIL,PHON} from '../../../store/text/articles'
 import {filter,age} from '../../../functions/functions'
 
-const CV = props =>{
+const Simple = props =>{
     const active = filter(props.lang).active
 
  return(
-     <section className='info blocks_padding'>
+     <section className='info'>
 
          <ul className='info__small'>
              <li><h2>{active.myName}</h2></li>
@@ -32,4 +32,4 @@ function mapstateToprops(state){
 }
 
 
-export default connect(mapstateToprops)(CV)
+export default connect(mapstateToprops)(Simple)

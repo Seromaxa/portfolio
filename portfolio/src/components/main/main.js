@@ -1,17 +1,12 @@
 import React from 'react'
-import CV from './CV/cv'
-import General from './CV/general'
+import Resume from './CV/resume'
 
 
 
 const Main = ()=>{
+   
  return( 
-    <main className='main'>
-<div className='wrapper'>
-   <CV />
-   <General />
-</div>
-    </main>
+<Resume />
  )
 }
 

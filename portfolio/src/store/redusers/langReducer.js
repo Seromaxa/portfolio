@@ -3,8 +3,7 @@ import  {SHOW_LIST,CHANGE_LANG} from '../actions/actionTypes'
 
 const initialState = {
  languages:[{...english},{...russian}],
- option: false
-
+ option: false,
 }
 
 
