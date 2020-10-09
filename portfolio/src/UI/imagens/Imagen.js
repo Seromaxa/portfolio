@@ -1,8 +1,12 @@
 import React from 'react'
+import Canvas from '../../components/main/CV/bacground/canvas'
 
 const Imagen = props =>{
     return(
-        <img src={props.src} className={props.imgClass} alt={props.alt} />
+        <div className={props.wrapper}>
+            <Canvas />
+            <img className={props.wrapped} src={props.src} alt={props.alt} />
+        </div>
     )
 }
 export default Imagen

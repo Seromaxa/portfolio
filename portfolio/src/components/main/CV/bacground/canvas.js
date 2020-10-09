@@ -4,7 +4,7 @@ import React, {useRef, useEffect} from 'react'
 
 
 
-const Canvas = props =>{
+const Canvas = () =>{
 
 const canv = useRef(null)
 
@@ -12,8 +12,8 @@ const canv = useRef(null)
 function drawing(activator){
     const canvas = canv.current
     const context = canvas.getContext('2d')
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
+    canvas.width = canvas.parentElement.clientWidth
+    canvas.height = canvas.parentElement.clientHeight
     const gradientBack = context.createLinearGradient(0,0,canvas.width,canvas.height)
     gradientBack.addColorStop(0, "#140036")
     gradientBack.addColorStop(1, "#191C75")
@@ -30,9 +30,9 @@ function drawing(activator){
         growing: true,
         draw() {
             const gradient1 = context.createLinearGradient(0, 0, canvas.width, canvas.height)
-            gradient1.addColorStop(0, "#DEF518")
-            gradient1.addColorStop(.5, '#F52618')
-            gradient1.addColorStop(1, '#007AF5')
+            gradient1.addColorStop(0, "#0F0F94")
+            gradient1.addColorStop(.5, '#94461E')
+            gradient1.addColorStop(1, '#2E940F')
             context.beginPath()
             context.arc(this.x, this.y, this.r, this.bconer, this.r * 2)
             context.fillStyle = gradient1
@@ -75,12 +75,12 @@ function drawing(activator){
     }
   
     function onDrawing(){
-        let totalCPS = 4
+        let totalCPS = 1
         let count = 0
         while(count<totalCPS){
             fillArr(arrCircles)
             count++
-        }
+        }    
         arrCircles.map(item1=>{
             if(item1.growing){
                 if(!!item1.edgeDetect()){
@@ -100,16 +100,23 @@ function drawing(activator){
             item1.draw()
             return item1
         })
-        
+       
+    
+
     }
 
     function rendering(){
     
-    
-            onDrawing()
+    if(arrCircles.length <600){
+   
+        onDrawing()
 
-    
-        activator = window.requestAnimationFrame(rendering)
+        activator = window.requestAnimationFrame(rendering,canvas)
+    }else{
+       
+        window.cancelAnimationFrame(activator)
+        return
+    }
         
     
     }
@@ -134,7 +141,7 @@ return ()=>{
 
     return(
         
-        <canvas ref={canv} className='bacground'>You browser can't show pawer of canvas</canvas>
+        <canvas ref={canv} className='bacground' id='canvas'>You browser can't show pawer of canvas</canvas>
           
     
     )
@@ -143,3 +150,9 @@ return ()=>{
 
 
 export default Canvas
+
+
+
+// gradient1.addColorStop(0, "#DEF518")
+// gradient1.addColorStop(.5, '#F52618')
+// gradient1.addColorStop(1, '#007AF5')

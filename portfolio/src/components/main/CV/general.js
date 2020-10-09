@@ -1,26 +1,23 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {filter} from '../../../functions/functions'
-import {TEXNOLOGY} from '../../../store/text/articles'
+import { connect } from 'react-redux'
+import { filter } from '../../../functions/functions'
 
-const General = props =>{
+const General = props => {
 
     const active = filter(props.lang.languages).active
 
-    return(
-        <section className='general_info'>
+    return (
+        <div className='general_info'>
             <h2 className='general_info__hero'>{active.aboutMe}</h2>
             <p>{active.generalInfo}</p>
-    <p>{active.lookFo} junior <i>Front-end</i> {active.vacancy}.</p>
-    <h3>{active.skillsTag}:</h3>
-    <ul className='general_info__skill_list'>{TEXNOLOGY.map(item=><li key={item}>{item}</li>)}</ul>
-            <hr />
-        </section>
+            <p>{active.lookFo} junior <i>Front-end</i> {active.vacancy}.</p>
+
+        </div>
     )
 
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
     return {
         lang: state.langReducer
     }
