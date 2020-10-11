@@ -2,4 +2,45 @@
     width: 67%
     border: 1px solid black
     border-radius: 10px
+
+.main_wrapper__list
+    @include  list
+    justify-content: space-between
+    width: 90%
+    margin: 0 auto
+    padding: 0 0 3%
+    flex-wrap: wrap
+    li 
+        width: 48%  
+        border: 1px solid black
+        border-radius: 10px
+        overflow: hidden
+        margin: 3% 0
+        box-shadow: 0px 1px 7px 3px #616161
+        
     
+
+.main_wrapper__list__list_item
+    width: 100%
+    height: 190px
+    overflow: auto
+    
+    
+.main_wrapper__list__list_item::-webkit-scrollbar
+    width: 0
+
+
+.main_wrapper__list__list_item__imagen
+    width: 100%
+    object-fit: cover   
+
+.main_wrapper__list__list_item__description
+    width: 85%
+    text-align: center
+    padding: 5% 0
+    margin: 0 auto
+
+.main_wrapper__list__hero
+    text-align: center
+    text-transform: uppercase    
+

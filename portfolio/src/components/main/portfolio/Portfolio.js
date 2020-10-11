@@ -1,10 +1,8 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import {connect} from 'react-redux'
 import {filter} from '../../../functions/functions'
-import Verstka from '../../../imagens/verstka.jpg'
-import Landing from '../../../imagens/landing.jpg'
-import Library from '../../../imagens/library.png'
-import Todo from '../../../imagens/todo.png'
+import Imagen from '../../../UI/imagens/Imagen'
+
 
 
 
@@ -12,24 +10,27 @@ const Portfolio = props =>{
 
    const active = filter(props.lang).active
 
-    const [worcks,setWorcs]=useState({
-        
-    })
 
  
 
 
     return(
-        <>
- 
-    </>
+        <section>
+        <h2 className='main_wrapper__list__hero'>{active.works}</h2>
+     <ul className='main_wrapper__list'>
+         {Object.keys(props.photo).map(item=><li key={item}><Imagen wrapper='main_wrapper__list__list_item' wrapped={'main_wrapper__list__list_item__imagen'} src={props.photo[item]} alt={item} />
+         <p className='main_wrapper__list__list_item__description'>{active[item]}</p>
+         </li>)}
+     </ul>
+     </section>
     )
 
 }
 
 function mapStateToProps(state){
     return{
-        lang: state.langReducer.languages
+        lang: state.langReducer.languages,
+        photo: state.portfolioRducer
     }
  
 }

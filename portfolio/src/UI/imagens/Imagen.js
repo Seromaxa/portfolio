@@ -1,10 +1,9 @@
 import React from 'react'
-import Canvas from '../../components/main/CV/bacground/canvas'
 
 const Imagen = props =>{
     return(
-        <div className={props.wrapper}>
-            <Canvas />
+        <div className={props.wrapper} >
+            {props.children}
             <img className={props.wrapped} src={props.src} alt={props.alt} />
         </div>
     )

@@ -24,7 +24,8 @@ export default function langReducer(state= initialState,action){
             }return item})
             return{
                 ...state,
-                languages:activeLang
+                languages:activeLang,
+                option:!state.option
             }
         
             default:

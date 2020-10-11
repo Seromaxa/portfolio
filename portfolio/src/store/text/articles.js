@@ -16,6 +16,10 @@
  const RU_SKILLS = 'Технологии которые я использую'
  const RU_LOOK_FO = `Я ищю вакансию`
  const RU_VAC = 'разработчик'
+ const RU_VERSTKA = 'Адаптивная верстка лендинга. HTML/Sass/SVG. Немного CSS анимации, слайдер на CSS.'
+ const RU_LANDING = 'Адаптивная верстка лендинга. HTML/Sass/SVG/JS/Webpack. JS и CSS анимации,(осваивал Webpack).'
+ const RU_LIBRARY = 'База данных "Библиотека". HTML/Sass/SVG/JS. Создание и учет книг, читателей, карточки абонентов, поиск, сортировка (localStorage)'
+ const RU_TODO = 'Список задач. React/CSS. Создание целей, категорий. Присваивание задаче: категорию, таймер, описание.'
 
 
 //////////// English ///////////
@@ -24,7 +28,7 @@
  const EN_MY_NAME = 'Romanenko Sergii'
  const EN_NAME_LANGUAGE = 'Language:'
  const EN_CV = 'Resume'
- const EN_WORKS = "Portfolio"
+ const EN_WORKS = "My worcks"
  const EN_CONTACT = "Contact"
  const EN_MAIL = 'Email'
  const EN_PHONE = "Phone"
@@ -36,6 +40,10 @@
  const EN_SKILLS =`Technology which I'm using`
  const EN_LOOK_FO = `I'm looking for vacancy a`
  const EN_VAC = 'developer'
+ const EN_VERSTKA = 'Responsive landing. HTML/Sass/SVG. A little bit CSS animation and CSS slider'
+ const EN_LANDING = 'Responsive landing. HTML/Sass/SVG/JS/Webpack. JS and CSS animations,(did it to use Webpack)'
+ const EN_LIBRARY = 'Some datebase of library. HTML/Sass/SVG/JS. You can create database of books and readers cards (database save in localStorage)'
+ const EN_TODO = `To-do list. React/CSS. There you can create some aims, set timer to you's aim and do some description, aims can be sorted by categoty or classes`
 
 ////////////// General Cont //////////
 
@@ -65,6 +73,10 @@ export const russian = {
     skillsTag: RU_SKILLS,
     lookFo: RU_LOOK_FO,
     vacancy: RU_VAC,
+    verstka: RU_VERSTKA,
+    landing:RU_LANDING,
+    library:RU_LIBRARY,
+    todo:RU_TODO,
 
 
     active: false
@@ -88,7 +100,10 @@ export const english ={
     skillsTag: EN_SKILLS,
     lookFo: EN_LOOK_FO,
     vacancy: EN_VAC,
-
+    verstka: EN_VERSTKA,
+    landing:EN_LANDING,
+    library:EN_LIBRARY,
+    todo:EN_TODO,
 
 
     active: true
