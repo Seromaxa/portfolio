@@ -1,3 +1,5 @@
 export const SHOW_LIST = 'SHOW_LIST'
 export const CHANGE_LANG = 'CHANGE_LANG'
 export const FILL_CANVAS = 'FILL_CANVAS'
+export const CLOSE_MODAL = 'CLOSE_MODAL'
+export const OPEN_MODAL = 'OPEN_MODAL'

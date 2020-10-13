@@ -12,3 +12,12 @@ export function age (yearMonthDay){
     let birthDay = new Date(yearMonthDay).getFullYear()
     return new Date().getFullYear() - birthDay
 }
+
+export function addClass (willBoolen,arr,nameOfClass) {
+    if(!!willBoolen){
+     arr.push(nameOfClass) 
+    }else{
+     return arr
+    } 
+    return arr.join(' ')
+     }

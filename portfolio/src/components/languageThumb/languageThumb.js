@@ -1,17 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {filter} from '../../functions/functions'
+import {filter,addClass} from '../../functions/functions'
 import {show,asyncChanger,changer} from '../../store/actions/actionsLang'
-
-const addClass = (willBoolen,arr,nameOfClass) =>{
-    if(!!willBoolen){
-     arr.push(nameOfClass) 
-    }else{
-     return arr
-    } 
-    return arr.join(' ')
-     }
-
 
 
 const LanguageThumb = (props) => {

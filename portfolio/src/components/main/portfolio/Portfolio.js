@@ -1,7 +1,8 @@
-import React, {useState,useEffect} from 'react'
+import React from 'react'
 import {connect} from 'react-redux'
 import {filter} from '../../../functions/functions'
 import Imagen from '../../../UI/imagens/Imagen'
+import {open} from '../../../store/actions/modalsAction'
 
 
 
@@ -18,8 +19,8 @@ const Portfolio = props =>{
         <section>
         <h2 className='main_wrapper__list__hero'>{active.works}</h2>
      <ul className='main_wrapper__list'>
-         {Object.keys(props.photo).map(item=><li key={item}><Imagen wrapper='main_wrapper__list__list_item' wrapped={'main_wrapper__list__list_item__imagen'} src={props.photo[item]} alt={item} />
-         <p className='main_wrapper__list__list_item__description'>{active[item]}</p>
+         {props.photo.map(item=><li onClick={()=>props.openHandler(item.name)} key={item.name}><Imagen wrapper='main_wrapper__list__list_item' wrapped={'main_wrapper__list__list_item__imagen'} src={item.photo} alt={item.name} />
+         <p className='main_wrapper__list__list_item__description'>{active[item.name]}</p>
          </li>)}
      </ul>
      </section>
@@ -34,5 +35,10 @@ function mapStateToProps(state){
     }
  
 }
+function mapDispatchToProps(dispatch){
+    return{
+        openHandler: (val)=>dispatch(open(val))
+    }
+}
 
-export default connect(mapStateToProps)(Portfolio)
+export default connect(mapStateToProps,mapDispatchToProps)(Portfolio)
