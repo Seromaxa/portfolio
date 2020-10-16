@@ -4,8 +4,10 @@ import MyFace from '../../../imagens/webVersion.png'
 import Simple from './simple'
 import General from './general'
 import Portfolio from '../portfolio/Portfolio'
+import Technology from './technology'
 import Canvas from '../CV/bacground/canvas'
 import LanguageThumb from '../../languageThumb/languageThumb'
+
 
 
 const Resume =()=>{
@@ -22,6 +24,7 @@ const Resume =()=>{
              <General />
           </aside>
           <article className='main__wrapper'>
+             <Technology />
             <Portfolio />
           </article>
        </main>

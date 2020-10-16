@@ -50,7 +50,7 @@
 export const EMAIL = 'sergromanenko@gmail.com'
 export const PHON = '+38 (097) 298 73 14'
 export const FACEBOOK = 'https://www.facebook.com/profile.php?id=100000893622459'
-export const TEXNOLOGY = ['HTML5','CSS3 (Flexbox, Grid)','SCSS/SASS/LESS','Webpack/Gulp','JavaScript(ES6)','jQuery','React JS','Node.js','Git']
+export const TECHNOLOGY = ['HTML5','CSS3 (Flexbox, Grid)','SCSS/SASS/LESS','Webpack/Gulp','JavaScript(ES6)','jQuery','React JS (Redux)','Node.js','Git']
 
 
 //////// Assemblage   ///////////////
