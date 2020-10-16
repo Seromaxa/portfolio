@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {filter,addClass} from '../../functions/functions'
-import {show,asyncChanger,changer} from '../../store/actions/actionsLang'
+import {show,changer} from '../../store/actions/actionsLang'
 
 
 const LanguageThumb = (props) => {

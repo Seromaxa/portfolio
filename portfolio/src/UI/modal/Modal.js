@@ -1,7 +1,7 @@
 import React from 'react'
 import {addClass} from '../../functions/functions'
 import {connect} from 'react-redux'
-import {close} from '../../store/actions/modalsAction'
+import {close,thumb} from '../../store/actions/modalsAction'
 import Imagen from '../imagens/Imagen'
 
 
@@ -9,17 +9,21 @@ import Imagen from '../imagens/Imagen'
 const Modal = props =>{
 
  const  classArr = ['modal_wrapper']
+ const listClass = ['modal_item__img_wrapper']
 
 
     return (
         <div className={addClass(props.closeBoolen.open,classArr,'open')}>
-           <div className= 'modal_item'>
-           <div className='modal_wrapper_claser' onClick ={props.closeHandler} >&#10008;</div>
-           {props.photos.map(item=>item.show?<Imagen key={`phto`+item.name} wrapper='modal_item__img_wrapper' wrapped="modal_item__img_wrapper__imagen"src={item.photo}/>:null)}
-           </div>
+            <div className='modal_wrapper_closer' onClick ={props.closeHandler} >&#10008;</div>
+            <div className='leftArroy' onClick={()=>props.thumbHalder('left')}></div>
+         <ul className='modal_item'>
+             {props.photos.map(item=><li className='modal_item__list_item' key={'photo'+ item.name}> <Imagen wrapper={addClass(item.show,listClass,'vision')} wrapped='modal_item__img_wrapper__imagen'src={item.photo}/></li>)}
+         </ul>
+           <div className='rigthArroy' onClick={()=>props.thumbHalder('right')}></div>
         </div>
     )
 }
+
 
 function mapStateToProps(state){
     return{
@@ -29,7 +33,8 @@ function mapStateToProps(state){
 }
 function mapDispatchToProps(dispatch){
     return{
-        closeHandler: ()=>dispatch(close())
+        closeHandler: ()=>dispatch(close()),
+        thumbHalder: (value)=>dispatch(thumb(value))
     }
 }
 

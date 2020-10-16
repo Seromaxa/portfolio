@@ -15,7 +15,8 @@ switch(action.type){
             ...state,
             open: true
         }
-    default: return state    
+    default: return state  
+    
 }
 
 }

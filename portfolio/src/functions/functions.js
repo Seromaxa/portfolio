@@ -14,10 +14,11 @@ export function age (yearMonthDay){
 }
 
 export function addClass (willBoolen,arr,nameOfClass) {
-    if(!!willBoolen){
-     arr.push(nameOfClass) 
+   let newArr = [...arr]
+    if(willBoolen === true){
+     newArr.push(nameOfClass) 
     }else{
-     return arr
+     return newArr.join(' ')
     } 
-    return arr.join(' ')
+    return newArr.join(' ')
      }
