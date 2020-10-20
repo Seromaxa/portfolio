@@ -1,4 +1,4 @@
-import {SHOW_LIST,CHANGE_LANG} from './actionTypes'
+import {SHOW_LIST,CHANGE_LANG,HIDE_LIST} from './actionTypes'
 
 export function show(){
     return {
@@ -11,12 +11,13 @@ export function changer(ev){
         val: ev
     }
 }
-export function asyncChanger(ev){
-    
+export function hide(){
     return(dispatch)=>{
-    setTimeout(()=>{
-        dispatch(changer(ev))
-        
-    },2000)
+        setTimeout(()=>{
+              dispatch({type: HIDE_LIST}) 
+            
+        },3000)
     }
+  
+   
 }

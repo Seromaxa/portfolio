@@ -20,7 +20,10 @@
  const RU_LANDING = 'Адаптивная верстка лендинга. HTML/Sass/SVG/JS/Webpack. JS и CSS анимации,(осваивал Webpack).'
  const RU_LIBRARY = 'База данных "Библиотека". HTML/Sass/SVG/JS. Создание и учет книг, читателей, карточки абонентов, поиск, сортировка (localStorage)'
  const RU_TODO = 'Список задач. React/CSS. Создание целей, категорий. Присваивание задаче: категорию, таймер, описание.'
-
+const RU_YOUR_NAME = 'Имя'
+const RU_TEXT = 'Сообщение'
+const RU_MESSAGE_ME = 'Связатся со мной'
+const RU_SEND = 'Отправить'
 
 //////////// English ///////////
 
@@ -44,6 +47,10 @@
  const EN_LANDING = 'Responsive landing. HTML/Sass/SVG/JS/Webpack. JS and CSS animations,(did it to use Webpack)'
  const EN_LIBRARY = 'Some datebase of library. HTML/Sass/SVG/JS. You can create database of books and readers cards (database save in localStorage)'
  const EN_TODO = `To-do list. React/CSS. There you can create some aims, set timer to you's aim and do some description, aims can be sorted by categoty or classes`
+ const EN_YOUR_NAME = 'Name'
+ const EN_TEXT = 'Message'
+ const EN_MESSAGE_ME = 'Contact me'
+ const EN_SEND = 'Send'
 
 ////////////// General Cont //////////
 
@@ -77,6 +84,10 @@ export const russian = {
     landing:RU_LANDING,
     library:RU_LIBRARY,
     todo:RU_TODO,
+    yourName: RU_YOUR_NAME,
+    message:RU_TEXT,
+    contactMe: RU_MESSAGE_ME,
+    send:RU_SEND,
 
 
     active: false
@@ -104,6 +115,11 @@ export const english ={
     landing:EN_LANDING,
     library:EN_LIBRARY,
     todo:EN_TODO,
+    yourName: EN_YOUR_NAME,
+    message:EN_TEXT,
+    contactMe: EN_MESSAGE_ME,
+    send:EN_SEND,
+
 
 
     active: true

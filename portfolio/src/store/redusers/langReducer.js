@@ -1,5 +1,5 @@
 import {russian,english} from '../text/articles'
-import  {SHOW_LIST,CHANGE_LANG} from '../actions/actionTypes'
+import  {SHOW_LIST,HIDE_LIST,CHANGE_LANG} from '../actions/actionTypes'
 
 const initialState = {
  languages:[{...english},{...russian}],
@@ -16,6 +16,12 @@ export default function langReducer(state= initialState,action){
                 ...state,
                 option:!state.option
             }
+        case HIDE_LIST:
+            return{
+                ...state,
+                option: false
+            
+        }    
         case CHANGE_LANG:
             let activeLang =  state.languages.map(item=>{if(item.id === action.val){
                 item.active = true

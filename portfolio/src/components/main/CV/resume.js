@@ -7,12 +7,18 @@ import Portfolio from '../portfolio/Portfolio'
 import Technology from './technology'
 import Canvas from '../CV/bacground/canvas'
 import LanguageThumb from '../../languageThumb/languageThumb'
+import Modal from '../../../UI/modal/Modal'
+import MailForm from '../../mailme/mailMeForm'
+import {connect} from 'react-redux'
 
 
 
-const Resume =()=>{
+const Resume =props=>{
+
+ 
+
     return(
-       <main className='main'>
+       <main className='main' >
         <LanguageThumb />
           <aside className='main__aside'>
              <div className='aside__semple_wrapper'>
@@ -27,15 +33,19 @@ const Resume =()=>{
              <Technology />
             <Portfolio />
           </article>
+        {props.modalOpen.open?<Modal /> :null} 
+        {props.modalOpen.mail?<MailForm />:null}
        </main>
   )
     
 }
-export default Resume
+
+function mapStateToProps(state){
+   return{
+      modalOpen: state.modalReducer
+   }
+   
+}
 
 
-// <Canvas />
-// <div className='wrapper'>
-//    <Simple />
-//    <General />
-// </div>
+export default connect(mapStateToProps)(Resume)

@@ -1,7 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {filter,addClass} from '../../functions/functions'
-import {show,changer} from '../../store/actions/actionsLang'
+import {show,changer,hide} from '../../store/actions/actionsLang'
+import Mail from '../mailme/mailme'
 
 
 const LanguageThumb = (props) => {
@@ -15,7 +16,7 @@ const LanguageThumb = (props) => {
 
 
     return (
-<div className='language_wrapper'>
+<div className='language_wrapper' onMouseLeave={props.lang.option? props.listClose:null} >
      
             <ul className={addClass(props.lang.option, classList, 'vision')}>
                 <li key={active.id} className='activLang'>{active.language}</li>
@@ -25,9 +26,10 @@ const LanguageThumb = (props) => {
            <div>
                 <p>{active.nameLanguage}</p>
                 <p>{active.language}</p>
-
+                <Mail />
             </div>
             </div>
+           
         </div>
        )
 }
@@ -41,7 +43,8 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
  return{
      listVision: ()=> dispatch(show()),
-     changeLang: event=> dispatch(changer(event))
+     changeLang: event=> dispatch(changer(event)),
+     listClose: ()=> dispatch(hide())
 
  }
 }

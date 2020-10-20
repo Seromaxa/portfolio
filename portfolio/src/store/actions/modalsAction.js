@@ -1,4 +1,4 @@
-import {OPEN_MODAL,CLOSE_MODAL,THUMB} from './actionTypes'
+import {OPEN_MODAL,CLOSE_MODAL,THUMB,OPEN_MAIL,CLOSE_MAIL} from './actionTypes'
 
 export function close(){
     return{
@@ -18,4 +18,16 @@ export function thumb (value){
         type:THUMB,
         value
     }
+}
+
+export function openMail (event){
+    return{
+        type:OPEN_MAIL,
+        event
+    }
+}
+export  function closeMail (){
+        return{
+            type:CLOSE_MAIL
+        }
 }
