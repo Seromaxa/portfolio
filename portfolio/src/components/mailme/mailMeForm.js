@@ -4,6 +4,7 @@ import { filter } from '../../functions/functions'
 import Input from '../../UI/input/Input'
 import Button from '../../UI/button/Button'
 import { connect } from 'react-redux'
+import {USER,SERVIS,TEMPLATE} from '../../myConst'
 import { closeMail } from '../../store/actions/modalsAction'
 
 
@@ -38,8 +39,8 @@ const MailForm = props => {
     }, [])
 
     const sendHandler = () => {
-        init("user_zYLWMAzxO9riuM0vp56Ec")
-        send('service_8hj8g78', 'template_wdl3hhi', { name: name.current.value, mail: mail.current.value, message: text.current.value })
+        init(USER)
+        send(SERVIS, TEMPLATE, { name: name.current.value, mail: mail.current.value, message: text.current.value })
         name.current.value = ''
         mail.current.value = ''
         text.current.value = ''
