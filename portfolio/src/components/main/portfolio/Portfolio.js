@@ -16,7 +16,7 @@ const Portfolio = props =>{
 
 
     return(
-        <section>
+        <section className='my_worcks'>
         <h2 className='main_wrapper__list__hero'>{active.works}</h2>
      <ul className='main_wrapper__list'>
          {props.photo.map(item=><li onClick={()=>props.openHandler(item.name)} key={item.name}><Imagen wrapper='main_wrapper__list__list_item' wrapped={'main_wrapper__list__list_item__imagen'} src={item.photo} alt={item.name} />

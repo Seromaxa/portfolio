@@ -22,8 +22,10 @@
  const RU_TODO = 'Список задач. React/CSS. Создание целей, категорий. Присваивание задаче: категорию, таймер, описание.'
 const RU_YOUR_NAME = 'Имя'
 const RU_TEXT = 'Сообщение'
-const RU_MESSAGE_ME = 'Связатся со мной'
+const RU_MESSAGE_ME = 'Связаться со мной'
 const RU_SEND = 'Отправить'
+const RU_WARNING = 'Введите корректный адресс'
+const RU_MY = 'Мой'
 
 //////////// English ///////////
 
@@ -51,12 +53,15 @@ const RU_SEND = 'Отправить'
  const EN_TEXT = 'Message'
  const EN_MESSAGE_ME = 'Contact me'
  const EN_SEND = 'Send'
+ const EN_WARNING = 'Enter correct email'
+ const EN_MY = 'My'
 
 ////////////// General Cont //////////
 
 export const EMAIL = 'sergromanenko@gmail.com'
 export const PHON = '+38 (097) 298 73 14'
 export const FACEBOOK = 'https://www.facebook.com/profile.php?id=100000893622459'
+export const Github = 'https://github.com/Seromaxa'
 export const TECHNOLOGY = ['HTML5','CSS3 (Flexbox, Grid)','SCSS/SASS/LESS','Webpack/Gulp','JavaScript(ES6)','jQuery','React JS (Redux)','Node.js','Git']
 
 
@@ -88,6 +93,8 @@ export const russian = {
     message:RU_TEXT,
     contactMe: RU_MESSAGE_ME,
     send:RU_SEND,
+    warning:RU_WARNING,
+    my:RU_MY,
 
 
     active: false
@@ -119,6 +126,8 @@ export const english ={
     message:EN_TEXT,
     contactMe: EN_MESSAGE_ME,
     send:EN_SEND,
+    warning:EN_WARNING,
+    my:EN_MY,
 
 
 

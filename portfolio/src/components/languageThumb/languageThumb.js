@@ -18,7 +18,7 @@ const LanguageThumb = (props) => {
     return (
 <div className='language_wrapper' onMouseLeave={props.lang.option? props.listClose:null} >
      
-            <ul className={addClass(props.lang.option, classList, 'vision')}>
+            <ul className={addClass(props.lang.option, classList, 'display')}>
                 <li key={active.id} className='activLang'>{active.language}</li>
                 {unActive.map(item => <li onClick={event => props.changeLang(event.target.id)} key={item.id} id={item.id}>{item.language}</li>)}
             </ul>

@@ -37,19 +37,123 @@
     bottom: 0
     left: 0
     right: 0
-    padding-top: 10%
-    background: transparent 
+    padding-top: 5%
+    background: rgba(0,0 ,0 ,.5) 
+    z-index: 2
 
 .form
     position: relative
     margin: 0 auto
-    width: 50%
-    height: 50%   
-    background: blue  
+    width: 30%  
+    overflow: hidden
+    border-radius: 10px
+    box-shadow: 0px 1px 7px 3px #616161
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding-bottom: 2%
+    h2 
+        text-align: center
+        font-style: italic
+    label
+        display: block  
+        font-style: italic
+    input,
+    textarea
+        background-color: transparent 
+        border-style: none
+        border-radius: 10px
+        box-shadow: inset 0px 1px 7px 3px #adabab
+        outline: none
+    span 
+        display: block
+        color: red 
+    input 
+        height: 30px        
+
+.input_wrapper
+    height: 80px   
+    animation: closer 3s 
+
+.form:before
+    position: absolute
+    content: ''
+    width: 70%
+    height: 100%
+    background: #C7C7C7   
+    top: 0
+    left: 0
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 0% 100%)
+    z-index: -1
+    animation: movi 3s 
+
+
+.form:after
+    position: absolute
+    content: ''
+    width: 70%
+    height: 100%
+    background: #ffffff  
+    top: 0
+    right: 0     
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%)
+    z-index: -2
+    animation: movi2 3s 
 
 .form_closer_position
     position: absolute
-    top: -5%
-    right: -3%             
-       
+    top: 3%
+    right: 3%   
+    animation: closer 2.5s   
 
+.text_wrapper
+    margin-bottom: 3%
+    animation: closer 3s 
+
+.button
+    width: 30%
+    background-color: #ffffff
+    border-style: none
+    padding: 2%
+    border-radius: 10px
+    box-shadow:  0px 1px 7px 3px #adabab
+    outline: none
+    opacity: 0
+    animation: sendler 3s 2s both
+    
+.button:active
+    box-shadow: inset 0px 1px 7px 3px #adabab
+
+
+
+
+@keyframes sendler
+    0%
+       opacity: 0 
+    100%
+       opacity: 1 
+       
+@keyframes closer
+    0%
+        transform: scale(0)
+        opacity: 0
+
+    100%
+        transform: scale(1)
+        opacity: 1
+
+
+@keyframes movi
+    0%
+        
+        left: -100%
+    100%
+        left: 0
+
+@keyframes movi2
+    0%
+        right: -100%
+    100%
+        right: 0    
+           
+        
