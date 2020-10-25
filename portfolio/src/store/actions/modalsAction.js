@@ -1,4 +1,4 @@
-import {OPEN_MODAL,CLOSE_MODAL,THUMB,OPEN_MAIL,CLOSE_MAIL} from './actionTypes'
+import {OPEN_MODAL,CLOSE_MODAL,THUMB,OPEN_MAIL,CLOSE_MAIL,FILL_INPUT,SEND_MESSAGE,REWRITE} from './actionTypes'
 
 export function close(){
     return{
@@ -30,4 +30,25 @@ export  function closeMail (){
         return{
             type:CLOSE_MAIL
         }
+}
+
+export function fillInput(value,event){
+    return{
+        type: FILL_INPUT,
+        value,
+        event
+    }
+}
+
+export function sendler (){
+    return{
+        type:SEND_MESSAGE
+    }
+}
+
+export function errMail () {
+    return{
+        type:REWRITE
+    }
+    
 }

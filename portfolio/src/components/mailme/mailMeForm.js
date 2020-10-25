@@ -1,27 +1,19 @@
-import React, { useEffect, useState, useRef } from 'react'
-import { init, send } from 'emailjs-com'
-import is from 'is_js'
+import React, { useEffect} from 'react'
 import { filter } from '../../functions/functions'
 import Input from '../../UI/input/Input'
 import Button from '../../UI/button/Button'
 import { connect } from 'react-redux'
-import { USER, SERVIS, TEMPLATE } from '../../myConst'
-import { closeMail } from '../../store/actions/modalsAction'
+import { closeMail,fillInput,sendler,errMail } from '../../store/actions/modalsAction'
 
 
 
 const MailForm = props => {
-
-    const [warn, setWarn] = useState(false)
-    const name = useRef()
-    const mail = useRef()
-    const text = useRef()
-
     const active = filter(props.lang.languages).active
 
     const submitHandler = ev => {
         ev.preventDefault()
     }
+
     const clicker = event => {
         if (event.code === 'Escape') {
             return props.closeHandler()
@@ -35,27 +27,11 @@ const MailForm = props => {
             window.removeEventListener('keydown', clicker)
         }
     })
-    useEffect(() => {
+ 
 
-    }, [])
+ 
 
-    const focusHandler = () => {
-        if (warn === true) {
-            setWarn(false)
-        }
-    }
 
-    const sendHandler = () => {
-        if (is.email(name.current.value) === false) {
-            setWarn(true)
-            return
-        } else {
-            init(USER)
-            send(SERVIS, TEMPLATE, { name: name.current.value, mail: mail.current.value, message: text.current.value })
-            props.closeHandler()
-        }
-
-    }
 
     return (
         <div className='form_wrapper'>
@@ -67,9 +43,10 @@ const MailForm = props => {
                     wrapper= 'input_wrapper'
                     labelHero={active.yourName}
                     inputType='text'
+                    value={props.mailer.message.name}
                     name='name'
-                    refs={name}
                     autoComplete = 'off'
+                    onChange ={event=>props.fillHandler('name',event.target.value)}
 
                 />
                 <Input
@@ -77,19 +54,20 @@ const MailForm = props => {
                     labelHero={active.mail}
                     inputType='email'
                     name='senderMail'
-                    refs={mail}
-                    warningMessage={warn}
+                    value={props.mailer.message.mail}
+                    warningMessage={props.mailer.warning}
                     warning={active.warning}
-                    onFocus={focusHandler}
                     autoComplete = 'off'
+                    onFocus = {props.reWriteMail}
+                    onChange ={event=>props.fillHandler('mail',event.target.value)}
                 />
                 <div className='text_wrapper'>
                     <label htmlFor='messageText'>{active.message}</label>
-                    <textarea id='messageText' name='message' ref={text} rows='8' />
+                    <textarea id='messageText' name='message' rows='8' onChange ={event=>props.fillHandler('text',event.target.value)} value={props.mailer.message.text}/>
                 </div>
                 <Button
                     buttonHero={active.send}
-                    onClick={sendHandler}
+                    onClick={props.sendHandler}
                     buttonClass='button'
                 />
 
@@ -101,15 +79,18 @@ const MailForm = props => {
 
 function mapStateToProps(state) {
     return {
-        openMail: state.modalReducer.mail,
-        lang: state.langReducer
+        lang: state.langReducer,
+        mailer :state.modalReducer
 
     }
 
 }
 function mapDispatchToProps(dispatch) {
     return {
-        closeHandler: () => dispatch(closeMail())
+        closeHandler: () => dispatch(closeMail()),
+        fillHandler : (value,event) => dispatch(fillInput(value,event)),
+        sendHandler : ()=>dispatch(sendler()),
+        reWriteMail: ()=>dispatch(errMail())
     }
 
 }
